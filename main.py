@@ -14,12 +14,15 @@ def do_start(bot: Bot, update: Update):
         text="Привет! Отправь мне что-нибудь!",
     )
 
+
 def do_echo(bot: Bot, update:Update):
+    chat_id = update.message.chat_id
     text = update.message.text
     bot.send_message(
         chat_id=update.message.chat_id,
         text="Привет! Отправь мне что-нибудь!",
     )
+
 
 def main():
     bot = Bot(
