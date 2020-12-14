@@ -6,7 +6,14 @@ from config import TG_TOKEN
 
 MAIN_URL = f'https://api.telegram.org/bot{TG_TOKEN}'
 
-r = requests.get(f'{MAIN_URL}/getUpdates')
+payload = {
+    'chat_id': 354310062,
+    'text': 'Hellow to you!',
+    'reply_to_message_id': 68
+}
+
+# r = requests.get(f'{MAIN_URL}/getUpdates')
+r = requests.post(f'{MAIN_URL}/sendMessage', data=payload)
 print(r)
 
 print(r.json())
