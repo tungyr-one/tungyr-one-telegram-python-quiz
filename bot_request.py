@@ -8,7 +8,7 @@ MAIN_URL = f'https://api.telegram.org/bot{TG_TOKEN}'
 
 payload = {
     'chat_id': 354310062,
-    'text': 'Hellow to you!',
+    'text': 'Nice to see you again!',
     'reply_to_message_id': 68
 }
 
