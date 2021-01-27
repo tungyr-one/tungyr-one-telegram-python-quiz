@@ -12,8 +12,8 @@ payload = {
     'reply_to_message_id': 68
 }
 
-# r = requests.get(f'{MAIN_URL}/getUpdates')  # получение сообщения
-r = requests.post(f'{MAIN_URL}/sendMessage', data=payload)  # отсылка сообщения
+r = requests.get(f'{MAIN_URL}/getUpdates')  # получение сообщения
+# r = requests.post(f'{MAIN_URL}/sendMessage', data=payload)  # отсылка сообщения
 print(r)
 
 print(r.json())

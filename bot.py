@@ -1,4 +1,5 @@
 # https://www.youtube.com/watch?v=LJdu68ro-rU&ab_channel=GeekCode
+# doc: https://github.com/eternnoir/pyTelegramBotAPI
 
 import random
 import telebot
@@ -17,6 +18,11 @@ def command_handler(message: Message):
         bot.reply_to(message, 'Menu is developing now:(')
         print(message.text)
 
+
+@bot.message_handler(content_types=['sticker'])  # react to stickers
+def sticker_handler(message: Message):
+    print(message.text)
+    print(message.sticker)
 
 
 @bot.message_handler(content_types=['text'])  # бот реагирует на текст
@@ -37,14 +43,16 @@ def echo_digits(message: Message):
         result = int(digit) * int(digit)
         bot.reply_to(message, f'The pow of {digit} is {str(result)}')
 
-    if 'pic' in message.text:  # Not working
-        photo = open('girl.jpg', 'rb')
-        bot.reply_to(message, photo)
+    # if 'pic' in message.text:  # Not working
+    #     photo = open('girl.jpg', 'rb')
+    #     bot.reply_to(message, photo)
 
-    else:
-        bot.reply_to(message, str(random.random()))
-        bot.reply_to(message, 'Your message: ' + message.text)
-        print(message.text)
+    # else:
+        # bot.reply_to(message, str(random.random()))  # reply as random digit
+        # bot.reply_to(message, 'Your message: ' + message.text)  # send back user's message text
+        # print(message.text)
+
+
 
 # @bot.message_handler(func=lambda m: True)  # ответ на любые сообщения текстом отправленного сообщения
 # def echo_all(message):
