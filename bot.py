@@ -25,6 +25,7 @@ def command_handler(message: Message):
 @bot.message_handler(content_types=['text', "sticker"])  # react to stickers (not working)
 def sticker_handler(message: Message):
     print(message.chat.id)
+    print(bot.get_updates())
     bot.send_sticker(message.chat.id, sticker_id)
     return
 
