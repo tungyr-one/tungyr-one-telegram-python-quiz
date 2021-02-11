@@ -10,7 +10,7 @@ from config import TG_TOKEN
 
 bot = telebot.TeleBot(TG_TOKEN)
 sticker_id = 'CAADAgADOQADfyesDlKEqOOd72VKAg'
-
+sticker_id2 = 'CAADAgADqAIAAkcVaAllGKpjZDCAgQI'
 
 @bot.message_handler(commands=['start', 'help'])
 def command_handler(message: Message):
@@ -25,9 +25,13 @@ def command_handler(message: Message):
 @bot.message_handler(content_types=['text', "sticker"])  # react to stickers (not working)
 def sticker_handler(message: Message):
     print(message.chat.id)
-    print(bot.get_updates())
-    bot.send_sticker(message.chat.id, sticker_id)
+    print(message.content_type)
+    # if message.content_type == ['sticker']:
+    #     bot.send_sticker(message.chat.id, sticker_id2, reply_to_message_id=message.id, )
+    # bot.get_sticker_set('sticker-set')
+    bot.send_sticker(message.chat.id,'https://telegram.org/file/811140823/2/gEXq-ZISs9g/55f6c9c9f87c4dceb0')
     return
+
 
 
 # @bot.message_handler(content_types=['text'])  # бот реагирует на текст
@@ -63,7 +67,8 @@ def sticker_handler(message: Message):
 
 
 
-
+#
 # upd = bot.get_updates()  # получение обновлений, как вытащить из него данные?
+# for i in upd:
+#     print(i)
 bot.polling(timeout=60)
-
