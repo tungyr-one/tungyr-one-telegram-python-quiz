@@ -1,0 +1,2 @@
+1. What is the Python?; A. Animal ; +B. Programming language; C. Cake's name; D. Car model;
+2. Which lang used for creation of Python core?; A. Scala; B. C#; C. Pascal; +D. C++;	

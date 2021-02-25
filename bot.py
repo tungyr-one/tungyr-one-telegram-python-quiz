@@ -28,7 +28,7 @@ def command_handler(message: Message):
 
     if '/start' in message.text:
         bot.reply_to(message, 'Test is starting!')
-        quest = test()
+        quest = test_question()
         bot.send_message(message.chat.id, quest)
         answer_handler(message)
 
@@ -36,22 +36,12 @@ def command_handler(message: Message):
     return
 
 
-def test():
-    with open('test.txt', 'r') as f:
+def test_question():
+    with open('test_questions.txt', 'r') as f:
         [questions.append(question) for question in f.readlines()]
     print(questions)
     for i in questions:
         yield i
-
-
-# @bot.infinity_polling(lambda query: query.query)
-# def query_text(inline_query):
-#     try:
-#         r = types.InlineQueryResultArticle('1', 'Result', types.InputTextMessageContent('Result message.'))
-#         r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('Result message2.'))
-#     except Exception as e:
-#         print(e)
-
 
 
 @bot.message_handler(content_types=['text'])
@@ -62,6 +52,13 @@ def answer_handler(message: Message):
     return
 
 
+# @bot.infinity_polling(lambda query: query.query)
+# def query_text(inline_query):
+#     try:
+#         r = types.InlineQueryResultArticle('1', 'Result', types.InputTextMessageContent('Result message.'))
+#         r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('Result message2.'))
+#     except Exception as e:
+#         print(e)
 
 # @bot.message_handler(content_types=['text'])  # бот реагирует на текст
 # @bot.edited_message_handler(content_types=['text'])  # бот реагирует на отредактированный текст тоже

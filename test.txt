@@ -1,2 +1,0 @@
-1. What is the Python?
-2. Which lang used for creation of Python core?

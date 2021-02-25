@@ -1,0 +1,20 @@
+{
+	"id": 1,
+	"question": "What is the Python?"
+	"variants" [
+		"var_A": "Programming language"
+		"var_B": "Animal"
+		"var_C": "Cake's name"
+		"var_D": "Car model"
+				]
+},
+{
+	"id": 2,
+	"question": "Which lang used for creation of Python core?"
+	"variants" [
+		"var_A": "Scala"
+		"var_B": "C++"
+		"var_C": "Pascal"
+		"var_D": "C#"
+				]
+}	
